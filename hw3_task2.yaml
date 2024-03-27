@@ -1,0 +1,48 @@
+swagger: "2.0"
+info:
+  title: hw3_task2_api
+  description: my 2nd GCP API, which perform basic arithmetic operations using Cloud Run
+  version: 1.0.0
+
+host: hw3task2api.apigateway.coe453-hw3-201953450.cloud.goog
+basePath: /
+schemes:
+  - https
+
+paths:
+  /add:
+    post:
+      operationId: addOperationContainer
+      summary: Add two numbers
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://addcontainer-hy625zglpa-uc.a.run.app/
+  /sub:
+    post:
+      operationId: subOperationContainer
+      summary: Subtract two numbers
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://subcontainer-hy625zglpa-uc.a.run.app
+  /mul:
+    post:
+      operationId: mulOperationContainer
+      summary: Multiply two numbers
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://mulcontainer-hy625zglpa-uc.a.run.app
+  /div:
+    post:
+      operationId: divOperationContainer
+      summary: Divide two numbers
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://divcontainer-hy625zglpa-uc.a.run.app
